@@ -50,7 +50,12 @@ console.log(updateBook({
     published: new Date(2015, 12, 13),
     available: false
 }));
-// //Define a function removeBook(id: number): boolean that takes a book id as a parameter and removes the book with the given id from the books array. The function should return true if the book was removed successfully or false if the book was not found.
-// function removeBook(id:number):boolean {
-// return available 
-// }
+//Define a function removeBook(id: number): boolean that takes a book id as a parameter and removes the book with the given id from the books array. The function should return true if the book was removed successfully or false if the book was not found.
+function removeBook(id) {
+    if (book_arr.find(function (book) { return book.id === id; })) {
+        book_arr.pop(id);
+        return true;
+    }
+    else
+        return false;
+}
